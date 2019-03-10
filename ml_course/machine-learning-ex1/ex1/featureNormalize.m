@@ -27,11 +27,13 @@ sigma = zeros(1, size(X, 2));
 %       
 
 for iter = 1:size(X,2)
-  mu(1,iter) = mean(X(:,iter)); % calcula a média de cada variavel
-  X_norm(:,iter) = X(:,iter) .- mu(1,iter); % subtrai essa media das variaveis 
-  sigma(1,iter) = std(X(:,iter)); % calcula a std de cada variavel
-  X_norm(:,iter) = X(:,iter) ./ sigma(1,iter); %divide pela std
+  mu(1, iter) = mean(X(:,iter));
+  sigma(1, iter) = std(X(:, iter));
+  X_norm(:,iter) = (X_norm(:,iter) - mu(1, iter)) / sigma(1, iter);
 endfor
+  %X
+  %fprintf('------------------------------------------');
+  %X_norm
 
 
 
